@@ -1,0 +1,47 @@
+CREATE SCHEMA hospitalizacion;
+use hospitalizacion;
+create table paciente (
+Documento_Paciente int primary key,
+Nombre_pac char(50),
+Apellido_pac char(50),
+Acompanante char(50),
+Documento_acompanante int,
+Dirección varchar(50),
+Ciudad char(50),
+Telefono int,
+Mail char(50),
+Medico_asignado char(50),
+Enfermero_asignado char(50)
+);
+
+CREATE table signos_vitales(
+   id_int int not null AUTO_INCREMENT primary key,
+   Fecha_hora date,
+   Equipo_asignado varchar(10),
+   Toma_prueba VARCHAR(50),
+   oximetria int,
+   Frec_respiratoria INT,
+   Frec_Cardiaca INT,
+   Temperatura INT,
+   Presion_arterial INT,
+   Glicemias INT
+   
+  );
+  
+  create table personal_medico (
+  nombre_med char(50),
+  apellido_med char(50),
+  Documento_med int primary key,
+  Cargo_Especialidad char(50),
+  Horario varchar(50)
+  );
+  
+  CREATE table historia (
+  ID_Registro int AUTO_INCREMENT primary key,
+  ID_Paciente int,
+  ID_Medico int,
+  Diagnostico varchar(500),
+  Sugerencias varchar (500),
+  foreign key (ID_Paciente) references paciente (Documento_Paciente),
+  foreign key (ID_Medico) references personal_medico (Documento_med)
+  );
