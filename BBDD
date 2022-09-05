@@ -14,6 +14,7 @@ Medico_asignado char(50),
 Enfermero_asignado char(50)
 );
 
+// Luis Eduardo venegas crea informacion
 CREATE table signos_vitales(
    id_int int not null AUTO_INCREMENT primary key,
    Fecha_hora date,
@@ -36,6 +37,7 @@ CREATE table signos_vitales(
   Horario varchar(50)
   );
   
+  // Luis Eduardo venegas crea informacion
   CREATE table historia (
   ID_Registro int AUTO_INCREMENT primary key,
   ID_Paciente int,
