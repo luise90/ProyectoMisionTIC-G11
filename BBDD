@@ -28,6 +28,34 @@ CREATE table signos_vitales(
    Glicemias INT
    
   );
+  
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1032435896, "05-09-2022","XXXX", "XXXX", 92, 91, 120, 37, 135, 230)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(79583654, "10-09-2022","XXXX", "XXXX", 85, 97, 125, 38, 125, 250)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1032435546, "07-09-2022","XXXX", "XXXX", 89, 90, 110, 36, 123, 240)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(79563214, "06-09-2022","XXXX", "XXXX", 87, 85, 140, 38, 140, 245)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1020435896, "09-09-2022","XXXX", "XXXX", 93, 92, 125, 37, 120, 220)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1030432896, "10-09-2022","XXXX", "XXXX", 94, 93, 128, 38, 138, 236)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1015435896, "05-09-2022","XXXX", "XXXX", 82, 81, 100, 39, 150, 270)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1025435896, "05-09-2022","XXXX", "XXXX", 91, 85, 110, 37, 145, 260)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1022435896, "07-09-2022","XXXX", "XXXX", 96, 93, 122, 37, 126, 222)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1012435896, "08-09-2022","XXXX", "XXXX", 95, 95, 120, 39, 116, 223)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1012435896, "09-09-2022","XXXX", "XXXX", 92, 91, 120, 37, 135, 230)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1002435896, "10-09-2022","XXXX", "XXXX", 93, 86, 156, 40, 148, 275)
+INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(1042435896, "06-09-2022","XXXX", "XXXX", 84, 87, 170, 39, 152, 276)
+
   
   create table personal_medico (
   nombre_med char(50),
