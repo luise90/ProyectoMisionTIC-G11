@@ -1,104 +1,126 @@
 CREATE SCHEMA hospitalizacion;
 use hospitalizacion;
 create table paciente (
-Documento_Paciente int primary key,
+Documento_Paciente double primary key,
 Nombre_pac char(50),
 Apellido_pac char(50),
 Acompanante char(50),
-Documento_acompanante int,
+Documento_acompanante double,
 Dirección varchar(50),
 Ciudad char(50),
-Telefono int,
+Telefono double,
 Mail char(50),
 Medico_asignado char(50),
 Enfermero_asignado char(50)
 );
 
 CREATE table signos_vitales(
-   id_int int not null AUTO_INCREMENT primary key,
-   Fecha_hora date,
-   Equipo_asignado varchar(10),
-   Toma_prueba VARCHAR(50),
-   oximetria int,
-   Frec_respiratoria INT,
-   Frec_Cardiaca INT,
-   Temperatura INT,
-   Presion_arterial INT,
-   Glicemias INT
-   
-  );
+   id_int int not null AUTO_INCREMENT primary key,
+   Fecha_hora date,
+   Equipo_asignado varchar(10),
+   Toma_prueba VARCHAR(50),
+   oximetria int,
+   Frec_respiratoria INT,
+   Frec_Cardiaca INT,
+   Temperatura INT,
+   Presion_arterial INT,
+   Glicemias INT
+   
+  );
   
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1032435896, "05-09-2022","XXXX", "XXXX", 92, 91, 120, 37, 135, 230)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(79583654, "10-09-2022","XXXX", "XXXX", 85, 97, 125, 38, 125, 250)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1032435546, "07-09-2022","XXXX", "XXXX", 89, 90, 110, 36, 123, 240)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(79563214, "06-09-2022","XXXX", "XXXX", 87, 85, 140, 38, 140, 245)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1020435896, "09-09-2022","XXXX", "XXXX", 93, 92, 125, 37, 120, 220)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1030432896, "10-09-2022","XXXX", "XXXX", 94, 93, 128, 38, 138, 236)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1015435896, "05-09-2022","XXXX", "XXXX", 82, 81, 100, 39, 150, 270)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1025435896, "05-09-2022","XXXX", "XXXX", 91, 85, 110, 37, 145, 260)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1022435896, "07-09-2022","XXXX", "XXXX", 96, 93, 122, 37, 126, 222)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1012435896, "08-09-2022","XXXX", "XXXX", 95, 95, 120, 39, 116, 223)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1012435896, "09-09-2022","XXXX", "XXXX", 92, 91, 120, 37, 135, 230)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1002435896, "10-09-2022","XXXX", "XXXX", 93, 86, 156, 40, 148, 275)
-INSERT INTO signos_vitales(id_int,fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
-values(1042435896, "06-09-2022","XXXX", "XXXX", 84, 87, 170, 39, 152, 276)
-
-  
-  create table personal_medico (
-  nombre_med char(50),
-  apellido_med char(50),
-  Documento_med int primary key,
-  Cargo_Especialidad char(50),
-  Horario varchar(50)
-  );
-  
-
-  CREATE table historia (
-  ID_Registro int AUTO_INCREMENT primary key,
-  ID_Paciente int,
-  ID_Medico int,
-  Diagnostico varchar(500),
-  Sugerencias varchar (500),
-  foreign key (ID_Paciente) references paciente (Documento_Paciente),
-  foreign key (ID_Medico) references personal_medico (Documento_med)
-  );
+  create table personal_medico (
+  nombre_med char(50),
+  apellido_med char(50),
+  Documento_med double primary key,
+  Cargo_Especialidad char(50),
+  Horario varchar(50)
+  );
   
-INSERT INTO historia (ID_Registro, ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
-values(101, 1032435896, 205620,"después de al gunos síntomas fue diagnosticado radiológicamente de un cáncer de próstata y vejiga", "El cirujano recomendó cirugía inmediata y dio un pronóstico reservado con pocas posibilidades de super vivencia, no más de 6 mese	s a un año.")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(102,79583654, 205621,"El diagnóstico fue confirmado por biopsia", "Después de múltiples consultas el paciente fue tratado con medios biológicos para estimular las defensas inmunológicas.")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(103,1032435546, 205622,"el dianostico despues de varias pruebas es baja tension", "XXXX")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(104,79563214, 205623,"el dianostico despues de las pruebas realizadas corresponde ataque cardiaco", "XXXX")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(105,1020435896, 205624,"el diagnostico despues de pruebas de sangre el disnostico es leucemia", "XXXX")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(106,1030432896, 205625,"el diagnostico final se debe al estres laboral", "XXXX")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(107,1015435896, 205626,"el dignostico final hipertensión alta", "XXXX")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(108,1025435896, 205627,"el diagnostico final que sufre de migraña severa", "XXXX")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(109,1022435896, 205628,"diagnostico final paralisis temporal", "XXXX")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(110,1012435896, 205629,"diagnostico final presenta paludismo", "XXXX")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(111,1012435896, 205630,"diagnostico final obecidad", "XXXX")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias) 
-values(112,1002435896, 205631,"diagnostico fnal sufre de hemorroides", "XXXX")
-INSERT INTO historia(ID_registro,id_paciente,id_medico,diagnostico,sugerencias)  
-values(113,1042435896, 205632,"diagnostico final virus que altero su metabolismo", "XXXX")
+  CREATE table historia (
+  ID_Registro int AUTO_INCREMENT primary key,
+  ID_Paciente double,
+  ID_Medico double,
+  Diagnostico varchar(500),
+  Sugerencias varchar (500),
+  foreign key (ID_Paciente) references paciente (Documento_Paciente),
+  foreign key (ID_Medico) references personal_medico (Documento_med)
+  );
+  
+  
+insert into paciente (Documento_Paciente,Nombre_pac,Apellido_pac,Acompanante,Documento_acompanante,Dirección,Ciudad,Telefono,Mail,Medico_asignado,Enfermero_asignado) values
+(1032435896, "Camilo","Diaz","Maria Perez",31987382,"Calle 12 #5-46","Bogota",3013459857,"camilodiaz@gmail.com",1112387569,1312878434),
+(79583654,"Petrona","Martinez","Saulo Tarso",16098789,"Carrera 3 #15-18","Fusagasuga",3509842481,"petronamartinez@gmail.com",97834502,12349475648),
+(1032435546,"Silvia","Perez","Andrea Rodriguez",1010983562,"Diagonal 45 bis #28-74", "Bogota",3202677546,"perezsilvia@gmail.com",34896785,1010167548),
+(79563214,"Andres","Parra","Marina Parra",67453809,"Calle 45 #74-65","Bogota",3129860475,"parrandres@gmail.com",1112387569,1312878434),
+(1020435896,"Claudia","Salgado","Fabian Salgado",18564750,"Carrera 72#5-05","Bogota",3044894775,"claudis.salga@gmail.com",97834502,12349475648),
+(1030432896,"Sergio","Cucunuba","Juliana Sarmiento",1021098689,"Calle 128 #75-21","Bogota",3128090065,"sercucu@gmail.com",34896785,1010167548),
+(1015435896,"Pablo","Camelo","Benito Teado",98490638,"Av. Circunvalar #65-28","Bogota",3184458876,"camelo100@gmail.com",34896785,1010167548),
+(1025435896,"Lady","Salcedo","Aquiles Castro",1032554682,"Calle 75 #98-67","Bogota",3196302541,"salcedolady@gmail.com",97834502,12349475648),
+(1022435896,"Sandra","Gonzalez","Mauricio Gonzalez",67322796,"Carrera 13 #21-89","Chia",3012587413,"sgonzalez@gmail.com",1112387569,1312878434),
+(1012435896,"Martin","Fuentes","Camila Marin",1018545632,"Calle 15 #23-17","Cajica",3002697002,"marfuent@gmail.com",1112387569,1312878434),
+(1002435896,"Fernanda","Fernandez","Francisco Ferrer",1235468950,"Calle 23 #4-64","Chia",3026553695,"ferx2@gmail.com",97834502,12349475648),
+(1042435896,"Luis","Garcia","Linda Garces",98563241,"Carrera 18 #53-18","Chia",3507629584,"luisgarcia@gmail.com",97834502,12349475648);
+
+insert into personal_medico(nombre_med,apellido_med,Documento_med,Cargo_Especialidad,Horario) values
+("Javier","Vanegas",1112387569,"Medicina General","6AM"),
+("Camila","Pedraza",1312878434,"Auxiliar de enfermeria","6AM"),
+("Patricia","Ariza",97834502,"Medicina interna","10PM"),
+("Gustavo","Angarita",12349475648,"Auxiliar de enfermeria","10PM"),
+("Eduardo","Jimenez",34896785,"Medicina general","2PM"),
+("Gabriel","Casas",1010167548,"Auxiliar de medicina","2PM")
+;
+
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(1032435896, 1112387569,"después de algunos síntomas fue diagnosticado radiológicamente de un cáncer de próstata y vejiga", "El cirujano recomendó cirugía inmediata y dio pronóstico reservado con pocas posibilidades de supervivencia, no más de 6 meses a un año.");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(79583654, 97834502,"El diagnóstico fue confirmado por biopsia", "Después de múltiples consultas el paciente fue tratado con medios biológicos para estimular las defensas inmunológicas.");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(1032435546, 34896785,"el dianostico despues de varias pruebas es baja tension", "XXXX");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(79563214, 1112387569,"el dianostico despues de las pruebas realizadas corresponde ataque cardiaco", "XXXX");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(1020435896, 97834502,"el diagnostico despues de pruebas de sangre el disnostico es leucemia", "XXXX");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias)  
+values(1030432896, 34896785,"el diagnostico final se debe al estres laboral", "XXXX");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(1015435896, 1112387569,"el dignostico final hipertensión alta", "XXXX");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(1025435896, 97834502,"el diagnostico final que sufre de migraña severa", "XXXX");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(1022435896, 34896785,"diagnostico final paralisis temporal", "XXXX");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(1012435896, 1112387569,"diagnostico final presenta paludismo", "XXXX");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(1012435896, 97834502,"diagnostico final obecidad", "XXXX");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(1002435896, 34896785,"diagnostico fnal sufre de hemorroides", "XXXX");
+INSERT INTO historia (ID_Paciente, ID_Medico, Diagnostico, Sugerencias) 
+values(1042435896, 1112387569,"diagnostico final virus que altero su metabolismo", "XXXX");
+
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias) 
+values(05/09/2022,"XXXX", "XXXX", 92, 91, 120, 37, 135, 230);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(10/09/2022,"XXXX", "XXXX", 85, 97, 125, 38, 125, 250);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(07/09/2022,"XXXX", "XXXX", 89, 90, 110, 36, 123, 240);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(06/09/2022,"XXXX", "XXXX", 87, 85, 140, 38, 140, 245);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(09/09/2022,"XXXX", "XXXX", 93, 92, 125, 37, 120, 220);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(10/09/2022,"XXXX", "XXXX", 94, 93, 128, 38, 138, 236);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(05/09/2022,"XXXX", "XXXX", 82, 81, 100, 39, 150, 270);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(05/09/2022,"XXXX", "XXXX", 91, 85, 110, 37, 145, 260);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(07/09/2022,"XXXX", "XXXX", 96, 93, 122, 37, 126, 222);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(08/09/2022,"XXXX", "XXXX", 95, 95, 120, 39, 116, 223);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(09/09/2022,"XXXX", "XXXX", 92, 91, 120, 37, 135, 230);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(10/09/2022,"XXXX", "XXXX", 93, 86, 156, 40, 148, 275);
+INSERT INTO signos_vitales(fecha_hora,equipo_asignado,toma_prueba,oximetria,frec_respiratoria,frec_cardiaca,temperatura,presion_arterial,glicemias)
+values(06/09/2022,"XXXX", "XXXX", 84, 87, 170, 39, 152, 276);
 
